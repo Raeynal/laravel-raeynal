@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnggotaController;
-use App\Http\Controllers\BukuContoller;
+use App\Http\Controllers\BukuController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\perpustakaan;
 use App\Http\Controllers\PetugasController;
@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 Route::resource('/anggota', AnggotaController::class);
 
-Route::resource('/buku', BukuContoller::class);
+Route::resource('/buku', BukuController::class);
 
 Route::resource('/petugas', PetugasController::class);
 

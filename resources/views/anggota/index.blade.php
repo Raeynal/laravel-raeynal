@@ -55,7 +55,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($member as $key => $value)
+                                @forelse ($anggota as $key => $value)
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
                                     <td>{{ $value->id }}</td>
@@ -66,9 +66,13 @@
                                     <td>{{ $value->tlp }}</td>
                                     <td>{{ $value->alamat }}</td>
                                     <td>
-                                        <a href="" class="btn-sm btn-info">Show</a>
-                                        <a href="" class="btn-sm btn-warning">Edit</a>
-                                        <a href="" class="btn-sm btn-danger">Delete</a>
+                                     <form action="{{ route('anggota.destroy',$value->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <a href="{{ route('anggota.show',$value->id)}}" class="btn-sm btn-info">Show</a>
+                                        <a href="{{ route('anggota.edit',$value->id)}}" class="btn-sm btn-warning">Edit</a>
+                                        <button type="submit" class="btn-sm btn-danger" onclick="return confrim('Apakah Anda yakin ingin menghapus ini?')">Delete</button>
+                                    </from>
                                     </td>
                                 </tr>
 
